@@ -2,26 +2,130 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+/*
+ * MailCanvas Design System: "Teal Professional"
+ * Microsoft SharePoint/Sway Aesthetic
+ * Primary: Deep Teal/Cyan (#0d9488 / #14b8a6)
+ * Background: Slate tones - Calm, Organized, Premium
+ */
+
+@layer base {
+  :root {
+    /* Light Mode - Microsoft Teal Enterprise Palette */
+    /* Background: #F8FAFC (Slate-50) -> HSL: 210 40% 98% */
+    --background: 210 40% 98%;
+    /* Foreground: Slate-900 for text */
+    --foreground: 222.2 84% 4.9%;
+
+    /* Surface/Card: #FFFFFF */
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    /* Popover: White surface */
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    /* Primary: #0d9488 (Teal-600) -> HSL: 175 84% 32% */
+    --primary: 175 84% 32%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: Slate-100 */
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    /* Muted: Slate-100 */
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    /* Accent: Teal-50 for subtle highlights */
+    --accent: 166 76% 97%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    /* Destructive: Red */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Border: Slate-200 */
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+
+    /* Ring: Teal for focus states */
+    --ring: 175 84% 32%;
+
+    /* Chart colors - Teal-based palette */
+    --chart-1: 175 84% 32%;
+    --chart-2: 188 94% 43%;
+    --chart-3: 199 89% 48%;
+    --chart-4: 215 76% 56%;
+    --chart-5: 252 94% 67%;
+
+    /* Border Radius */
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Dark Mode - Microsoft Teal Enterprise Palette */
+    /* Background: #0F172A (Slate-900) -> HSL: 222.2 84% 4.9% */
+    --background: 222.2 84% 4.9%;
+    /* Foreground: Slate-50 for text */
+    --foreground: 210 40% 98%;
+
+    /* Surface/Card: #1E293B (Slate-800) -> HSL: 217.2 32.6% 17.5% */
+    --card: 217.2 32.6% 17.5%;
+    --card-foreground: 210 40% 98%;
+
+    /* Popover: Slate-800 */
+    --popover: 217.2 32.6% 17.5%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Primary: #14b8a6 (Teal-500) -> HSL: 173 80% 40% */
+    --primary: 173 80% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: Slate-700 */
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    /* Muted: Slate-700 */
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    /* Accent: Slate-700 with teal tint */
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    /* Destructive: Darker red for dark mode */
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Border: Slate-700 */
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+
+    /* Ring: Teal for focus states */
+    --ring: 173 80% 40%;
+
+    /* Chart colors - Teal/Cyan-based palette for dark mode */
+    --chart-1: 173 80% 45%;
+    --chart-2: 188 94% 48%;
+    --chart-3: 199 89% 53%;
+    --chart-4: 215 76% 61%;
+    --chart-5: 252 94% 72%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
